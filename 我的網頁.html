@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳秉彥的網站</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 15%;
+            height: auto;
+        }
+
+        marquee img {
+            height: 10vh;
+            width: auto;
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 40%;
+            }
+        }
+
+        canvas {
+            max-width: 50%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>歡迎來到我的網站</h1>
+    <img src="3.jpg" alt="圖片 3">
+    <a href="https://www.youtube.com/watch?v=1kN18qMvL78&list=PLrU9aQmIR6g1XEvEnDbUCr5jDe6kDW2ZZ&index=179" target="_blank">
+        <img src="2.jpg" alt="圖片 2">
+    </a>
+    <marquee direction="right">
+        右邊吃麵包的圖片可以點<img src="2.gif" alt="跑馬燈圖片">
+    </marquee>
+  
+    <h2>虎尾這禮拜的溫度</h2>
+    <canvas id="temperatureChart"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('temperatureChart').getContext('2d');
+        const temperatureChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+                datasets: [{
+                    label: '溫度 (°C)',
+                    data: [25, 27, 26, 28, 30, 29, 27],
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '溫度 (°C)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <p>
+        <a href="https://youchen624.github.io/NFUuse/" target="_blank">宥儒的網站</a>
+        <a href="https://hoyu17.github.io/abc//" target="_blank">柏勳的網站</a>
+        <a href="https://gumin878.github.io/-1/" target="_blank">家旻的網站</a>
+    </p>
+</body>
+</html>
